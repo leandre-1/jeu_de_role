@@ -13,8 +13,8 @@ class Personnage(pygame.sprite.Sprite):
         self.xp=xp
         self.niveau=niveau
         self.images = {
-            'left': pygame.image.load('sprites/chevalier_g.png'),
-            'right': pygame.image.load('sprites/chevalier_d.png')          
+            'left': pygame.image.load('python/sprites/chevalier_g.png'),
+            'right': pygame.image.load('python/sprites/chevalier_d.png')          
         }
         self.feet = pygame.Rect(0, 0, self.rect.width * 0.5, 10)
         self.old_position = self.position.copy()

@@ -13,26 +13,26 @@ class Game:
         pygame.display.set_caption("Donjon")   #Défini le titre de la fenêtre
 
         #Charger la carte
-        tmx_data = pytmx.util_pygame.load_pygame("carte/carte.tmx")
+        tmx_data = pytmx.util_pygame.load_pygame("python/carte/carte.tmx")
         map_data = pyscroll.data.TiledMapData(tmx_data)
         map_layer = pyscroll.orthographic.BufferedRenderer(map_data, self.screen.get_size())
 
         #Génère un joueur      
         classe = input("Veuillez choisir votre classe Guerrier ou Magicien : ")
         if classe == "Guerrier":
-            self.player = Guerrier(706, 199, "sprites/chevalier_d.png", 'Chevalier', 1, 10, 0, 1)
+            self.player = Guerrier(706, 199, "python/sprites/chevalier_d.png", 'Chevalier', 1, 10, 0, 1)
         elif classe == "Magicien":
-            self.player = Magicien(706, 199, "sprites/chevalier_d.png", 'Magicien', 5, 10, 0, 1)
+            self.player = Magicien(706, 199, "python/sprites/chevalier_d.png", 'Magicien', 5, 10, 0, 1)
         else:
             print("Classe inconnue, choix par défaut : Guerrier")
-            self.player = Guerrier(706, 199, "sprites/chevalier_d.png", 'Chevalier', 1, 10, 0, 1,)
+            self.player = Guerrier(706, 199, "python/sprites/chevalier_d.png", 'Chevalier', 1, 10, 0, 1,)
         
         #Generer les NPC
         self.npcs = [
-        NpcGuerrier(179, 145, "sprites/bouliste_petit.png", 'Bouliste', 1, 10, 0, 1, ["Bouuliste !", "Boboy"]),
-        NpcGuerrier(643, 550, "sprites/chevalier_ennemi_d.png", 'Le Laitier', 1, 10, 0, 1, ["Je suis le laitier", "Mon lait est délicieux"]),
-        NpcMagicien(223, 410, "sprites/petit_gandalf.png", 'Gandalf', 5, 10, 0, 1,["Vous ne passerez pas !", "Fuyez, pauvres fous !"]),
-        NpcMagicien(865, 550, "sprites/golem_petit.png", 'Golem', 5, 10, 0, 1,["aaaaa", "..."])
+        NpcGuerrier(179, 145, "python/sprites/bouliste_petit.png", 'Bouliste', 1, 10, 0, 1, ["Bouuliste !", "Boboy"]),
+        NpcGuerrier(643, 550, "python/sprites/chevalier_ennemi_d.png", 'Le Laitier', 1, 10, 0, 1, ["Je suis le laitier", "Mon lait est délicieux"]),
+        NpcMagicien(223, 410, "python/sprites/petit_gandalf.png", 'Gandalf', 5, 10, 0, 1,["Vous ne passerez pas !", "Fuyez, pauvres fous !"]),
+        NpcMagicien(865, 550, "python/sprites/golem_petit.png", 'Golem', 5, 10, 0, 1,["aaaaa", "..."])
         ]
 
         self.dialog_box = DialogBox(self.screen, pygame.font.Font(None, 24))    #Défini la boite de dialogue
